@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WM0WZB3LWZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-WM0WZB3LWZ');
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+    <link rel="stylesheet" href="final_styles.css">
+    <script src="email.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("user_72IB2UYZzZacDY5d0YCyj");
+        })();
+    </script>
+    <link rel="icon" href="Images/favicon.png">
+    <title>Advantage Stringing</title>
+
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="container flex">
+            <div class="logo">
+                <div class="menu-wrap">
+                    <input type="checkbox" class="toggler">
+                    <div class="hamburger"><div></div></div>
+                    <div class="menu">
+                        <div>
+                            <div>
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="strings.html">Strings</a></li>
+                                    <li><a href="order.html" class="underlined">Order</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="faqs.html">FAQs</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="logo-text">AdvantageStringers@gmail.com</h1>
+                <h1 class="logo-text">651-504-4842</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="strings.html">Strings</a></li>
+                    <li><a href="order.html" class="underlined">Order</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Showcase -->
+    <section class="order-showcase">
+        <div class="order-showcase-text grid">
+            <div class="content">
+                <h1 class="large-font">Order</h1>
+                <p>We take orders through call, text, and email, as well as any contact form and the order form below. After you place an order, we will contact you to arrange drop-off and pick-up dates. We usually take payments in cash after the order is complete.</p>
+            </div>
+        </div>
+    </section>
+    
+    <div class="wave-mode"></div>
+
+    <div class="spacer"></div>
+
+    <section class="order-help container">
+        <div class="order-help-wrapper card centered">
+            <h2 class="bolded">Want Help With Your Order?</h2>
+            <p>If you want assistance with choosing strings and tension, contact us with your questions. We can help guide your selection to improve certain areas of your game.</p>
+            <div class="flex">
+                <div><a class="blue-outline-button" id="helpBtn" href="#helpDialog" rel="modal:open">Contact Us</a></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="wave-mode2"></div>
+
+    <div class="modal help-dialog" id="helpDialog">
+        <div class="help-dialog-content">
+            <div class="help-dialog-header">
+                <h1 class="bolded large-font">How can we help?</h1>
+                <p>Message us with your questions or order details.</p>
+            </div>
+            <div class="spacer"></div>
+            <div class="help-dialog-form" id="helpDialogForm">
+                <form id="helpForm">
+                    <div class="grid">
+                        <div class="form-control">
+                            <input class="form-input-field-help help-input" id="firstHelp" type="name" name="first-name" placeholder="First Name" required>
+                        </div>
+                        <div class="form-control">
+                            <input class="form-input-field-help help-input" id="lastHelp" type="name" name="last-name" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <div class="flex">
+                            <input class="form-input-field-help help-input" id="contactHelp" type="contact" name="phone-email" placeholder="Phone/Email" required>
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <textarea name="message" id="messageHelp" placeholder="Message" rows="4" cols="35"></textarea>
+                    </div>
+                    <div class="flex">
+                        <div class="solid-blue-button" id="sendBtn" onclick="sendMessage()">Send Message</div>
+                    </div>
+                </form>
+            </div>
+            <div class="sending-screen" id="sendingScreen">
+                <div class="circular">
+                    <div class="inner"></div>
+                    <div class="circle">
+                       <div class="bar left">
+                          <div class="progress"></div>
+                       </div>
+                       <div class="bar right" id="progressBarHelp">
+                          <div class="progress"></div>
+                       </div>
+                     </div>
+                  </div>
+                <p>Sending Message...</p>
+            </div>
+            <div class="finished-screen" id="finishedScreen">
+                <p>Message Sent!</p>
+                <p>We will get back to you as soon as possible.</p>
+                <div class="flex">
+                    <a class="solid-blue-button" href="#" rel="modal:close">Close</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+
+    <div id="noRacketsError" class="modal">
+        <p>Please enter a racket before completing your order. If you need help, contact us with your questions.</p>
+        <div class="flex">
+            <a class="solid-blue-button" href="#" rel="modal:close">Close</a>
+        </div>
+    </div>
+
+    <div id="ex1" class="modal">
+        <p>Please pick a string provider before selecting strings.</p>
+        <div class="flex">
+            <a class="solid-blue-button" href="#" rel="modal:close">Close</a>
+        </div>
+    </div>
+
+    <div id="customerProvideStringDialog" class="modal">
+        <h1>Select Strings</h1>
+        <p>Input the strings you plan on bringing.</p>
+        <div class="error" id="customerProvideError">
+            <p>Please fill out both "String Name" inputs.</p>
+        </div>
+        <form action="" id="customerProvideStringForm">
+            <div class="customer-string-select grid">
+                <p class="type-label">Mains</p>
+                <div class="select-mains">
+                    <div class="form-control">
+                        <input class="form-input-field" id="mainsStringName" type="name" name="mains-string-name" placeholder="String Name" required>
+                    </div>
+                    <div class="form-control">
+                        <input class="form-input-field" id="mainsStringColor" type="name" name="mains-string-color" placeholder="String Color" required>
+                    </div>
+                </div>
+                <p class="type-label">Crosses</p>
+                <div class="select-crosses">
+                    <div class="form-control">
+                        <input class="form-input-field" id="crossesStringName" type="name" name="crosses-string-name" placeholder="String Name" required>
+                    </div>
+                    <div class="form-control">
+                        <input class="form-input-field" id="crossesStringColor" type="name" name="crosses-string-color" placeholder="String Color" required>
+                    </div>
+                </div>
+                <div class="form-control">
+                    <textarea name="notes"  id="stringNotes" placeholder="Notes/Special Instructions" rows="4" cols="35"></textarea>
+                </div>
+            </div>
+        </form>
+        
+        <div class="flex">
+            <a class="solid-blue-button" onclick="getCustomerProvideInputs()">Done</a>
+        </div>
+    </div>
+
+    <div id="asProvideStringDialog" class="modal">
+        <h1 id="dialogTop">Select Strings</h1>
+        <p>Input the strings you want for your racket.</p>
+        <div class="error" id="asProvideError">
+            <p>Please select a string for both the mains and crosses</p>
+        </div>
+        <div class="spacer"></div>
+        <div class="as-provide-dialog-content grid">
+            <p class="type-label">Mains</p>
+
+            <div class="mains-string-carousel string-carousel">
+                <div class="flex">
+                    <div class="string-item card">
+                        <div class="grid">
+                            <img src="Images/ytex-squarex.jpg" alt="Square X" class="string-img">
+                            <h1 class="string-name bolded">Square X</h1>
+                            <h2 class="string-type">Polyester</h2>
+                            <div class="flex">
+                                <div class="blue-outline-button cross-selector">Select</div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="string-item card">
+                        <div class="grid">
+                            <img src="Images/ytex-profeel.jpg" alt="Pro-Feel" class="string-img">
+                            <h1 class="string-name bolded">Pro-Feel</h1>
+                            <h2 class="string-type">Polyester</h2>
+                            <div class="flex">
+                                <div class="blue-outline-button cross-selector">Select</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="string-item card">
+                        <div class="grid">
+                            <img src="Images/ytex-protour.jpg" alt="Pro Tour" class="string-img">
+                            <h1 class="string-name bolded">Pro Tour</h1>
+                            <h2 class="string-type">Polyester</h2>
+                            <div class="flex">
+                                <div class="blue-outline-button cross-selector">Select</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="string-item card">
+                        <div class="grid">
+                            <img src="Images/ytex-polypower.jpg" alt="Poly Power" class="string-img">
+                            <h1 class="string-name bolded">Poly Power</h1>
+                            <h2 class="string-type">Polyester</h2>
+                            <div class="flex">
+                                <div class="blue-outline-button cross-selector">Select</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="string-item card">
+                        <div class="grid">
+                            <img src="Images/big-hitter.jpg" alt="Tourna Big Hitter" class="string-img">
+                            <h1 class="string-name bolded">Big Hitter</h1>
+                            <h2 class="string-type">Polyester</h2>
+                            <div class="flex">
+                                <div class="blue-outline-button cross-selector">Select</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="string-item card">
+                        <div class="grid">
+                            <img src="Images/volkl-vtorque.jpg" alt="Vtorque Tour" class="string-img">
+                            <h1 class="string-name bolded">Vtorque Tour</h1>
+                            <h2 class="string-type">Polyester</h2>
+                            <div class="flex">
+                                <div class="blue-outline-button cross-selector">Select</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="string-item card">
+                        <div class="grid">
+                            <img src="Images/poly-twist.jpg" alt="Polytwist" class="string-img">
+                            <h1 class="string-name bolded">Polytwist</h1>
+                            <h2 class="string-type">Polyester</h2>
+                            <div class="flex">
+                                <div class="blue-outline-button cross-selector">Select</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="string-item card">
+                        <div class="grid">
+                            <img src="Images/kirsch-synth-gut.jpg" alt="Kirschbaum SG" class="string-img">
+                            <h1 class="string-name bolded">Kirsch Synth Gut</h1>
+                            <h2 class="string-type">Synthetic Gut</h2>
+                            <div class="flex">
+                                <div class="blue-outline-button cross-selector">Select</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="string-item card mystery-item">
+                        <h1 class="string-name bolded mystery-title">Other</h1>
+
+                        <div class="other-content flex">
+                            <h2 class="string-type">Input any string and we will source it for you.</h2>
+                            <div class="flex">
+                                <div class="blue-outline-button other-main-selector">Select</div>
+                            </div>
+                        </div>
+                        
+                        <div class="other-form">
+                            <div class="mystery-dialog-form dialog-form" id="mysteryDialogForm">
+                                <form action="" id="mysteryStringForm">
+                                    <div class="form-control">
+                                        <input class="form-input-field mystery-input" id="stringName" type="name" name="string-name" placeholder="String Name" required>
+                                    </div>
+                                    <div class="form-control">
+                                        <input class="form-input-field mystery-input" id="stringColor" type="name" name="string-color" placeholder="Color" required>
+                                    </div>
+                                    <div class="form-control">
+                                        <input class="form-input-field mystery-input" id="stringGauge" type="name" name="string-gauge" placeholder="Gauge" required>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="solid-blue-button" id="addMysteryString" onclick="getStringInputs('mains')">Add String</div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        
+                    </div>
+                
+                </div>
+            </div>
+        
+            <div class="flex">
+                <div><i class="fas fa-angle-double-left" onclick="mainsCarousel('left')"></i></div>
+                <div><i class="fas fa-angle-double-right" onclick="mainsCarousel('right')"></i></div>
+            </div>
+
+            <hr>
+
+            <p class="type-label">Crosses</p>
+
+            <div class="crosses-string-carousel string-carousel">
+                <div class="flex">
+                    <div class="string-item card">
+                        <div class="grid">
+                            <img src="Images/ytex-squarex.jpg" alt="Square X" class="string-img">
+                            <h1 class="string-name bolded">Square X</h1>
+                            <h2 class="string-type">Polyester</h2>
+                            <div class="flex">
+                                <div class="blue-outline-button cross-selector">Select</div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="string-item card">
+                        <div class="grid">
+                            <img src="Images/ytex-profeel.jpg" alt="Pro-Feel" class="string-img">
+                            <h1 class="string-name bolded">Pro-Feel</h1>
+                            <h2 class="string-type">Polyester</h2>
+                            <div class="flex">
+                                <div class="blue-outline-button cross-selector">Select</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="string-item card">
+                        <div class="grid">
+                            <img src="Images/ytex-protour.jpg" alt="Pro Tour" class="string-img">
+                            <h1 class="string-name bolded">Pro Tour</h1>
+                            <h2 class="string-type">Polyester</h2>
+                            <div class="flex">
+                                <div class="blue-outline-button cross-selector">Select</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="string-item card">
+                        <div class="grid">
+                            <img src="Images/ytex-polypower.jpg" alt="Poly Power" class="string-img">
+                            <h1 class="string-name bolded">Poly Power</h1>
+                            <h2 class="string-type">Polyester</h2>
+                            <div class="flex">
+                                <div class="blue-outline-button cross-selector">Select</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="string-item card">
+                        <div class="grid">
+                            <img src="Images/big-hitter.jpg" alt="Tourna Big Hitter" class="string-img">
+                            <h1 class="string-name bolded">Big Hitter</h1>
+                            <h2 class="string-type">Polyester</h2>
+                            <div class="flex">
+                                <div class="blue-outline-button cross-selector">Select</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="string-item card">
+                        <div class="grid">
+                            <img src="Images/volkl-vtorque.jpg" alt="Vtorque Tour" class="string-img">
+                            <h1 class="string-name bolded">Vtorque Tour</h1>
+                            <h2 class="string-type">Polyester</h2>
+                            <div class="flex">
+                                <div class="blue-outline-button cross-selector">Select</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="string-item card">
+                        <div class="grid">
+                            <img src="Images/poly-twist.jpg" alt="Polytwist" class="string-img">
+                            <h1 class="string-name bolded">Polytwist</h1>
+                            <h2 class="string-type">Polyester</h2>
+                            <div class="flex">
+                                <div class="blue-outline-button cross-selector">Select</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="string-item card">
+                        <div class="grid">
+                            <img src="Images/kirsch-synth-gut.jpg" alt="Kirschbaum SG" class="string-img">
+                            <h1 class="string-name bolded">Kirsch Synth Gut</h1>
+                            <h2 class="string-type">Synthetic Gut</h2>
+                            <div class="flex">
+                                <div class="blue-outline-button cross-selector">Select</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="string-item card mystery-item">
+                        <h1 class="string-name bolded mystery-title">Other</h1>
+
+                        <div class="other-content flex">
+                            <h2 class="string-type">Input any string and we will source it for you.</h2>
+                            <div class="flex">
+                                <div class="blue-outline-button other-cross-selector">Select</div>
+                            </div>
+                        </div>
+                        
+                        <div class="other-form">
+                            <div class="mystery-dialog-form dialog-form" id="mysteryDialogForm">
+                                <form action="" id="mysteryStringForm">
+                                    <div class="form-control">
+                                        <input class="form-input-field mystery-input" id="stringName" type="name" name="string-name" placeholder="String Name" required>
+                                    </div>
+                                    <div class="form-control">
+                                        <input class="form-input-field mystery-input" id="stringColor" type="name" name="string-color" placeholder="Color" required>
+                                    </div>
+                                    <div class="form-control">
+                                        <input class="form-input-field mystery-input" id="stringGauge" type="name" name="string-gauge" placeholder="Gauge" required>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="solid-blue-button" id="addMysteryString" onclick="getStringInputs('crosses')">Add String</div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        
+                    </div>
+                
+                </div>
+            </div>
+            <div class="flex">
+                <div><i class="fas fa-angle-double-left" onclick="crossesCarousel('left')"></i></div>
+                <div><i class="fas fa-angle-double-right" onclick="crossesCarousel('right')"></i></div>
+            </div>
+            <div class="spacer"></div>
+        </div>
+        <div class="flex">
+            <a class="solid-blue-button" onclick="getAsProvideInputs()">Finish</a>
+        </div>
+    </div>
+
+    
+
+    <section class="order-page-content">
+        <div class="order-page-grid container">
+
+            <!-- Racket Info -->
+            <div class="racket-info">
+                <div class="racket-info-section grid">
+
+                    <!-- Box Header -->
+                    <div class="racket-info-header">
+                        <div class="flex">
+                            <h1 class="bolded">Racket Information</h1>
+                        </div>
+                    </div>
+
+                    <!-- Box Content -->
+                    <div class="racket-info-form">
+                        <div class="racket-form-wrapper racket-form-grid centered">
+                            <div class="flex">
+                                <div class="racket-details-form grid">
+                                    <form id="racketBrand">
+                                        <div class="form-control">
+                                            <input class="form-input-field racket-input" id="brandInput" type="racket" name="racket-brand" placeholder="Racket Brand" required>
+                                        </div>
+                                    </form>
+                                    <form id="racketModel">
+                                        <div class="form-control">
+                                            <input class="form-input-field racket-input" id="modelInput" type="racket" name="racket-model" placeholder="Racket Model" required>
+                                        </div>
+                                    </form>
+                                    <div class="selector-grid">
+                                        <div class="string-provider-selector centered" id="selectorWe" onclick="blue(1)">
+                                            <p class="string-provider-btn flex" id="weProvide">Advantage Stringing provides string<br>$20</p>
+                                        </div>
+                                        <div class="string-provider-selector centered" id="selectorYou" onclick="blue(2)">
+                                            <p class="string-provider-btn flex" id="youProvide">I provide string<br>$10</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="select-string-wrapper">
+                                <div class="flex">
+                                    <div class="type-label">Strings</div>
+                                    <div><a class="blue-outline-button" id="stringDialogLink" href="#ex1" rel="modal:open">Select Strings</a></div>
+                                </div>
+                            </div> 
+                            
+                            
+                            <div class="chosen-strings-wrapper">
+                                <div class="grid">
+                                    <div class="mains-selection string-selection">
+                                        <p class="type-label">Mains</p>
+                                        <div class="flex" id="mainsLabel">
+                                            <p id="mainLabel"></p>
+                                            <i class="fa fa-edit fa-1x tooltip" onclick="editStrings()">
+                                                <span class="tooltip-text">Edit</span>
+                                            </i>
+                                        </div>
+                                        
+                                        <div class="flex">
+                                            <div class="tension-picker mains-tension">
+                                                <span class="next" onclick="changeMainTension('i')"></span>
+                                                <span class="prev" onclick="changeMainTension('d')"></span>
+                                                <div id="box">
+                                                    <span>55 lbs</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="crosses-selection string-selection">
+                                        <p class="type-label">Crosses</p>
+                                        <div class="flex" id="crossesLabel">
+                                            <p id="crossLabel"></p>
+                                            <i class="fa fa-edit fa-1x tooltip" onclick="editStrings()">
+                                                <span class="tooltip-text">Edit</span>
+                                            </i>
+                                        </div>
+                                        
+                                        <div class="flex">
+                                            <div class="tension-picker crosses-tension">
+                                                <span class="next" onclick="changeCrossTension('i')"></span>
+                                                <span class="prev" onclick="changeCrossTension('d')"></span>
+                                                <div id="box">
+                                                    <span>55 lbs</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div> 
+                            
+                            
+
+                        </div>
+
+                    </div>
+
+                    <div class="solid-blue-button" id="doneRacketBtn" onclick="getRacketForm()">Done</div>
+
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="order-info">
+                <div class="order-info-section grid">
+
+                    <!-- Box Header -->
+                    <div class="order-info-header">
+                        <div class="flex">
+                            <h1 class="bolded">Order Summary</h1>
+                        </div>
+                    </div>
+
+                    <!-- Box Content -->
+                    <div class="order-info-content">
+                        <div class="order-info-wrapper">
+                            <ul class="order-summary-list">
+                                <li id="noRacketFiller">
+                                    <p class="bolded centered small-header">No rackets yet!</p>
+                                    <div class="flex">
+                                        <i class="fa fa-sad-tear fa-4x"></i>
+                                    </div>
+                                    
+                                    <p class="centered">Add a new racket under the "Racket Information" section.</p>
+                                </li>
+                                <li class="racket-item" id="racketItem1">
+                                    <div class="spacer"></div>
+                                    <div class="flex">
+                                        <p class="bolded" id="racketLabel">Racket 1</p>
+                                        <i class="fa fa-trash fa-1x tooltip deleteBtn">
+                                            <span class="tooltip-text">Delete</span>
+                                        </i>
+                                    </div>
+                                    <div class="small-spacer"></div>
+                                    <p id="racketModel">Brand/Model: </p>
+                                    <p id="mainsInfo">Mains: </p>
+                                    <p id="crossesInfo">Crosses: </p>
+                                    <p id="providerInfo">String Provider: </p>
+                                    <p id="priceInfo">Price: </p>
+                                    <div class="spacer"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="total" id="totalOrderPrice"><h4>Total: $0.00</h4></div>
+                    <div class="flex">
+                        <div><a class="solid-blue-button" id="finishBtn" onclick="openFinishDialog()">Complete</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="complete-dialog modal" id="completeDialog">
+        <div class="complete-dialog-content">
+            
+            <div class="complete-dialog-header">
+                <h1 class="bolded">Contact Information</h1>
+                <p>Last step before your order is finished!</p>
+            </div>
+            <div class="spacer"></div>
+            <div class="complete-dialog-form" id="completeDialogForm">
+                <form id="completeForm">
+                    <div class="grid">
+                        <div class="form-control">
+                            <input class="form-input-field complete-input" id="firstComplete" type="name" name="first-name" placeholder="First Name" required>
+                        </div>
+                        <div class="form-control">
+                            <input class="form-input-field complete-input" id="lastComplete" type="name" name="last-name" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <div class="flex">
+                            <input class="form-input-field complete-input" id="emailComplete" type="contact" name="phone-email" placeholder="Email / Phone Number" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-control">
+                        <textarea name="notes" id="notesComplete" placeholder="Notes, special instructions, or add-ons for each racket" rows="4" cols="35"></textarea>
+                    </div>
+                    <div class="flex">
+                        <div class="solid-blue-button" id="completeBtn" onclick="toLoadingScreen()">Complete Order</div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="completing-order-screen" id="completingOrderScreen">
+                <div class="circular">
+                    <div class="inner"></div>
+                    <div class="circle">
+                       <div class="bar left">
+                          <div class="progress"></div>
+                       </div>
+                       <div class="bar right" id="progressBarComplete">
+                          <div class="progress"></div>
+                       </div>
+                     </div>
+                  </div>
+                <p>Finishing Order...</p>
+            </div>
+            <div class="order-complete-screen" id="orderCompleteScreen">
+                <p>Order Placed</p>
+                <p>Thank you for stringing with Advantage Stringing.</p>
+                <p>Now that you're getting new strings, how about a new forehand? Contact us if you're interested in private lessons!</p>
+                <p>We will be in contact soon to arrange pickup and dropoff. In the meantime, if you have any questions visit our <a class="text-button" href="faqs.html">FAQs</a> page.</p>
+                
+                <div class="flex">
+                    <a class="solid-blue-button" id="completeCloseBtn" href="#" rel="modal:close">Close</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark py-5">
+        <div class="container grid grid-3">
+            <div>
+                <h1 class="large-font">Advantage Stringing</h1>
+            </div>
+
+            <div>
+                <p>AdvantageStringers@gmail.com</p>
+                <p>651-504-4842</p>
+                <p><a href="https://www.instagram.com/advantage_stringing/" target="_blank">Click to visit our Instagram!</a></p>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="strings.html">Strings</a></li>
+                    <li><a href="order.html">Order</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+    </footer>
+    
+</body>
+<script>
+
+    // Put borders around selector items when clicked
+    const providerSelectorItems = document.querySelectorAll('.string-provider-selector')
+
+    function blue(num) {
+        
+        switch(num) {
+            case 1:
+                $("#youProvide").css("background-color", "#fff");
+                $("#youProvide").css("color", "#333");
+                $("#youProvide").css("border-color", "rgb(192, 192, 192)");
+                $("#weProvide").css("background-color", "#0041A9");
+                $("#weProvide").css("color", "#fff");
+                $("#weProvide").css("border-color", "#0041A9");
+                $("#stringDialogLink").attr("href", "#asProvideStringDialog");
+                break;
+            case 2:
+                $("#weProvide").css("background-color", "#fff");
+                $("#weProvide").css("color", "#333");
+                $("#weProvide").css("border-color", "rgb(192, 192, 192)");
+                $("#youProvide").css("background-color", "#0041A9");
+                $("#youProvide").css("color", "#fff");
+                $("#youProvide").css("border-color", "#0041A9");
+                $("#stringDialogLink").attr("href", "#customerProvideStringDialog");
+                break;
+        }
+    };
+
+    var customerProvideInputsList = [];
+
+    function CustomerProvideInputs(mainString, mainColor, crossString, crossColor, notes) {
+        this.mainString = mainString;
+        this.mainColor = mainColor;
+        this.crossString = crossString;
+        this.crossColor = crossColor;
+        this.notes = notes;
+    }
+
+    function getCustomerProvideInputs() {
+        let customerProvideInput = new CustomerProvideInputs(
+            $("#mainsStringName").val(),
+            $("#mainsStringColor").val(),
+            $("#crossesStringName").val(),
+            $("#crossesStringColor").val(),
+            $("#stringNotes").val()
+        );
+        if(customerProvideInput.mainString != "" && customerProvideInput.crossString != "") {
+            $("#customerProvideError").css("display", "none");
+            $("#mainsStringName").val("");
+            $("#mainsStringColor").val("");
+            $("#crossesStringName").val("");
+            $("#crossesStringColor").val("");
+            $("#stringNotes").val("");
+            customerProvideInputsList.push(customerProvideInput);
+            $.modal.close();
+            $(".select-string-wrapper").css("display", "none");
+            $(".chosen-strings-wrapper").css("display", "block");
+            $(".chosen-strings-wrapper #mainLabel").html(customerProvideInput.mainString);
+            $(".chosen-strings-wrapper #crossLabel").html(customerProvideInput.crossString);
+
+        } else {
+            $("#customerProvideError").css("display", "block");
+        }
+    }
+
+    function AsProvideInputs(mainString, crossString) {
+        this.mainString = mainString;
+        this.crossString = crossString;
+    }
+
+    function getAsProvideInputs() {
+
+        let asProvideInput = new AsProvideInputs(
+            $(".mains-string-carousel .mystery-item").hasClass("selected-card") ? $(".mains-string-carousel #mysteryStringForm #stringName").val() : $(".mains-string-carousel .selected-card").children().children().eq(1).html(),
+            $(".crosses-string-carousel .mystery-item").hasClass("selected-card") ? $(".crosses-string-carousel #mysteryStringForm #stringName").val() : $(".crosses-string-carousel .selected-card").children().children().eq(1).html(),
+        );
+        if(asProvideInput.mainString && asProvideInput.crossString) {
+            $("#asProvideError").css("display", "none");
+            $(".mains-string-carousel .string-item").removeClass("selected-card");
+            $(".crosses-string-carousel .string-item").removeClass("selected-card");
+            $.modal.close();
+            $(".select-string-wrapper").css("display", "none");
+            $(".chosen-strings-wrapper").css("display", "block");
+            $(".chosen-strings-wrapper #mainLabel").html(asProvideInput.mainString);
+            $(".chosen-strings-wrapper #crossLabel").html(asProvideInput.crossString)
+        } else {
+            $("#asProvideError").css("display", "block");
+            $("#dialogTop").get(0).scrollIntoView();
+        }
+    }
+
+    function editStrings() {
+        if($("#youProvide").css("border-color") == "rgb(0, 65, 169)") {
+            $('#customerProvideStringDialog').modal();
+        } else if($("#weProvide").css("border-color") == "rgb(0, 65, 169)") {
+            $('#asProvideStringDialog').modal();
+        }
+    }
+
+    function mainsCarousel(direction) {
+        switch(direction) {
+            case "right":
+                $(".mains-string-carousel").scrollLeft(($(".mains-string-carousel").scrollLeft() + 95))
+                break
+            case "left":
+                $(".mains-string-carousel").scrollLeft(($(".mains-string-carousel").scrollLeft() - 95));
+                break
+        }
+    }
+
+    function crossesCarousel(direction) {
+        switch(direction) {
+            case "right":
+                $(".crosses-string-carousel").scrollLeft(($(".crosses-string-carousel").scrollLeft() + 95))
+                break
+            case "left":
+                $(".crosses-string-carousel").scrollLeft(($(".crosses-string-carousel").scrollLeft() - 95));
+                break
+        }
+    }
+
+    function changeMainTension(action) {
+        let num = parseInt($(".mains-tension #box span").html().split(" ")[0], 10);
+        switch(action) {
+            case "i":
+                $(".mains-tension #box span").html((num+1) + " lbs");
+                break;
+            case "d":
+                $(".mains-tension #box span").html((num-1) + " lbs");
+                break;
+        }
+    }
+    function changeCrossTension(action) {
+        let num = parseInt($(".crosses-tension #box span").html().split(" ")[0], 10);
+        switch(action) {
+            case "i":
+                $(".crosses-tension #box span").html((num+1) + " lbs");
+                break;
+            case "d":
+                $(".crosses-tension #box span").html((num-1) + " lbs");
+                break;
+        }
+    }
+
+    $(".main-selector").click(function(e) {
+        $(".mains-string-carousel .string-item").removeClass('selected-card');
+        $(this).parent().parent().parent().addClass('selected-card');
+    });
+
+    $(".other-main-selector").click(function(e) {
+        $(".mains-string-carousel .other-form").css("display", "block");
+        $(".mains-string-carousel .other-content").css("display", "none");
+    });
+
+    $(".other-cross-selector").click(function(e) {
+        $(".crosses-string-carousel .other-form").css("display", "block");
+        $(".crosses-string-carousel .other-content").css("display", "none");
+    });
+
+
+    $(".cross-selector").click(function(e) {
+        $(".crosses-string-carousel .string-item").removeClass('selected-card');
+        $(this).parent().parent().parent().addClass('selected-card');
+    });
+
+    //Code for choosing an "other" string
+    var mysteryStringObjList = [];
+
+    function MysteryString(type, name, color, gauge, link, notes) {
+        this.type = type,
+        this.name = name,
+        this.color = color,
+        this.gauge = gauge
+    };
+
+    $("#asProvideStringDialog").on($.modal.CLOSE, function(event, modal) {
+        $(`.mains-string-carousel #stringName`).val("");
+        $(`.mains-string-carousel #stringColor`).val("");
+        $(`.mains-string-carousel #stringGauge`).val("");
+        $(`.crosses-string-carousel #stringName`).val("");
+        $(`.crosses-string-carousel #stringColor`).val("");
+        $(`.crosses-string-carousel #stringGauge`).val("");
+        $(".mains-string-carousel .other-form").css("display", "none");
+        $(".mains-string-carousel .other-content").css("display", "block");
+        $(".crosses-string-carousel .other-form").css("display", "none");
+        $(".crosses-string-carousel .other-content").css("display", "block");
+    })
+
+    function getStringInputs(type) {
+
+        let newMysteryString = new MysteryString(
+            type,
+            $(`.${type}-string-carousel #stringName`).val(),
+            $(`.${type}-string-carousel #stringColor`).val(),
+            $(`.${type}-string-carousel #stringGauge`).val()
+        );
+
+        console.log(newMysteryString)
+
+        if(newMysteryString.name === "") {
+            $(`.${type}-string-carousel #stringName`).css("border", "1.5px solid rgb(172, 0, 0)");
+            return undefined;
+        }
+
+        $(`.${type}-string-carousel #stringName`).css("border", "1.5px solid #fff");
+        $(`.${type}-string-carousel #stringName`).css("border-bottom", "1.5px solid #b4becb");
+        
+        if(newMysteryString.name != "" && newMysteryString.type === "mains") {
+            $(".mains-string-carousel .string-item").removeClass('selected-card');
+            $(".other-main-selector").parent().parent().parent().addClass('selected-card');
+        } else if(newMysteryString.name != "" && newMysteryString.type === "crosses") {
+            $(".crosses-string-carousel .string-item").removeClass('selected-card');
+            $(".other-cross-selector").parent().parent().parent().addClass('selected-card');
+        }
+
+        mysteryStringObjList.push(newMysteryString);
+
+        //Put code here for sending us the string type selection
+        //closeMysteryDialog();
+    }
+
+    function Racket(number, brand, model, provider, main, mainTension, cross, crossTension, price) {
+        this.number = number;
+        this.brand = brand;
+        this.model = model;
+        this.provider = provider;
+        this.main = main;
+        this.mainTension = mainTension;
+        this.cross = cross;
+        this.crossTension = crossTension;
+        this.price = price;
+        this.subNumber = function() {
+            this.number -= 1;
+            console.log(this.number);
+        }
+    }
+    
+    
+    //List to hold all order information
+    var racketObjectList = [];
+
+    var orderTotal = 0;
+
+    const root = document.querySelector(":root");
+
+
+    function getRacketForm() {
+
+        let price = 0;
+        let provider = "";
+
+
+        // determine string provider and racket price
+        if($("#weProvide").css("border-color") == "rgb(0, 65, 169)") {
+            provider = "Advantage Stringing";
+            price = 20;
+            orderTotal += 20;
+        } else if($("#youProvide").css("border-color") == "rgb(0, 65, 169)") {
+            provider = "Customer";
+            price = 10;
+            orderTotal += 10;
+        }
+
+        // create new racket object conatining all values for the racket
+        let newRacket = new Racket(
+            racketObjectList.length+1,
+            $("#brandInput").val(), 
+            $("#modelInput").val(),
+            provider,
+            $("#mainLabel").html(), 
+            $(".mains-tension #box span").html(),
+            $("#crossLabel").html(), 
+            $(".crosses-tension #box span").html(),
+            price
+        );
+        // check if all form sections are filled out
+        for(let property in newRacket) {
+            // if they aren't, raise error message
+            if(newRacket[property] === "") {
+                if(property === "provider") {
+                    $("#weProvide").css("border", "1.5px solid rgb(172, 0, 0)");
+                    $("#weProvide").css("color", "#fff");
+                    $("#youProvide").css("color", "#fff");
+                    $("#weProvide").css("background", "rgb(172, 0, 0)");
+                    $("#youProvide").css("background", "rgb(172, 0, 0)");
+                    $("#youProvide").css("border", "1.5px solid rgb(172, 0, 0)");
+                } else if(property === "main" | property === "cross") {
+                    $(".select-string-wrapper").css("border", "2px solid rgb(172, 0, 0)");
+                }
+                $("#" + property + "Input").css("border", "1.5px solid rgb(172, 0, 0)");
+                orderTotal -= price;
+                price = 0;
+                return undefined;
+            }
+
+            if(property === "brand" | property === "model") {
+                $("#" + property + "Input").css("border", "1.5px solid #fff");
+                $("#" + property + "Input").css("border-bottom", "1.5px solid #b4becb");
+            }
+
+        }
+
+        // if they are all filled out, put the racket details in the order summery section
+        //and clear form
+
+        //Add new racket to list of all rackets in the order
+        racketObjectList.push(newRacket);
+        console.log(racketObjectList);
+        //Update order summary section
+
+        if(racketObjectList.length === 1) {
+            $("#noRacketFiller").css("display", "none");
+            $("#racketItem1").css("display", "block");
+        } else if(racketObjectList.length > 1) {
+            console.log("")
+            $("#racketItem1").clone().prop("id", "racketItem" + newRacket.number).appendTo(".order-summary-list");
+        } 
+
+        $("#racketItem" + newRacket.number + " .deleteBtn").attr("onclick", "deleteRacket(" + newRacket.number + ")");
+
+        $("#racketItem" + newRacket.number + " #racketLabel").html("Racket " + newRacket.number);
+        $("#racketItem" + newRacket.number + " #racketModel").html("Brand/Model: " + newRacket.brand + " " + newRacket.model);
+        $("#racketItem" + newRacket.number + " #mainsInfo").html("Mains: " + newRacket.main + ", " + newRacket.mainTension);
+        $("#racketItem" + newRacket.number + " #crossesInfo").html("Crosses: " + newRacket.cross + ", " + newRacket.crossTension);
+        $("#racketItem" + newRacket.number + " #providerInfo").html("String Provider: " + newRacket.provider);
+        $("#racketItem" + newRacket.number + " #priceInfo").html("Price: $" + newRacket.price + ".00");
+
+        $("#totalOrderPrice").html("Total: $" + orderTotal + ".00");
+
+
+        //Clear the form
+        $("#brandInput").val("");
+        $("#modelInput").val("");
+
+        $("#weProvide").css("border-color", "rgb(192, 192, 192)");
+        $("#weProvide").css("background", "#fff");
+        $("#weProvide").css("color", "#333");
+
+        $("#youProvide").css("background", "#fff");
+        $("#youProvide").css("color", "#333");
+        $("#youProvide").css("border-color", "rgb(192, 192, 192)");
+
+        $("#mainLabel").html("");
+        $("#crossLabel").html("");
+
+        $(".mains-tension #box span").html("55 lbs"),
+        $(".crosses-tension #box span").html("55 lbs"),
+
+        $(".chosen-strings-wrapper").css("display", "none");
+        $(".select-string-wrapper").css("display", "block");
+    }
+
+    // List to hold contact form inputs
+
+    function CompleteDialogForm(first, last, email, notes, rackets, mysteryString, customerProvideInput) {
+        this.first = first,
+        this.last = last,
+        this.email = email,
+        this.notes = notes,
+        this.rackets = rackets,
+        this.mysteryString = mysteryString,
+        this.customerProvideInput = customerProvideInput
+    }
+
+    $('#completeDialog').on($.modal.CLOSE, function(event, modal) {
+        //Close dialog and reset content to input form
+        $("#completeDialog").css("display", "none");
+        $("#orderCompleteScreen").css("display", "none");
+        $("#completingOrderScreen").css("display", "none");
+        $("#completeDialogForm").css("display", "block");
+
+        // Clear form content
+        $("#firstComplete").val("");
+        $("#lastComplete").val("");
+        $("#emailComplete").val("");
+        $("#notesComplete").val("");
+        // Reset error borders
+        $("#firstComplete").css("border", "1.5px solid #fff");
+        $("#lastComplete").css("border", "1.5px solid #fff");
+        $("#emailComplete").css("border", "1.5px solid #fff");
+        $("#notesComplete").css("border", "1.5px solid #b4becb");
+        //Clear borders around the form
+        $("#firstComplete").css("border-bottom", "1.5px solid #b4becb");
+        $("#lastComplete").css("border-bottom", "1.5px solid #b4becb");
+        $("#emailComplete").css("border-bottom", "1.5px solid #b4becb");
+
+    });
+
+    // When the user clicks on the button, open the dialog box
+    function openFinishDialog() {
+        if($("#racketItem1").css("display") === "block") {
+            $("#completeDialog").modal();
+        } else {
+            $("#noRacketsError").modal()
+        }
+    }
+
+    //when user clicks on complete order button, change to loading screen
+    function toLoadingScreen() {
+
+        let completeObj = new CompleteDialogForm(
+            $("#firstComplete").val(),
+            $("#lastComplete").val(),
+            $("#emailComplete").val(),
+            $("#notesComplete").val(),
+            racketObjectList,
+            mysteryStringObjList,
+            customerProvideInputsList
+        );
+
+        // check if all form sections are filled out
+        for(let property in completeObj) {
+            // if they aren't, raise error message
+            if(completeObj[property] === "") {
+                $("#" + property + "Complete").css("border", "1.5px solid rgb(172, 0, 0)");
+                return undefined;
+            }
+            if(property != "notes") {
+                $("#" + property + "Complete").css("border", "1.5px solid #fff");
+                $("#" + property + "Complete").css("border-bottom", "1.5px solid #b4becb");
+            } else {
+                $("#" + property + "Complete").css("border", "1.5px solid #b4becb");
+            }
+        }
+
+        //Move dialog content to loading screen
+        $("#completeDialogForm").css("display", "none");
+        $("#completingOrderScreen").css("display", "block");
+        sendMailComplete(completeObj);
+
+        //Clear content in order summary list
+        if(racketObjectList.length > 1) {
+            $("#completingOrderScreen").css("color", "red");
+            for(let i=1; i<racketObjectList.length; i++) {
+                $("#racketItem" + (i+1)).remove();
+            }
+        } 
+
+        //Clear variables
+        orderTotal = 0;
+        mysteryStringObjList = [];
+        racketObjectList = [];
+        customerProvideInputsList = [];
+        orderTotal = 0;
+
+        $("#totalOrderPrice").html("Total: $0.00");
+
+        $("#racketItem1").css("display", "none");
+        $("#noRacketFiller").css("display", "block");
+    }
+
+    //When loading screen is done, change content to order complete page
+    $("#progressBarComplete").on("animationend", function() {
+        $("#completingOrderScreen").css("display", "none");
+        $("#orderCompleteScreen").css("display", "block");
+    })
+
+
+    // List to hold question form inputs
+
+    function Question(first, last, contact, message) {
+        this.first = first,
+        this.last = last,
+        this.contact = contact,
+        this.message = message
+    };
+
+    $('#helpDialog').on($.modal.CLOSE, function(event, modal) {
+        //Close dialog and reset content to input form
+        $("#helpDialog").css("display", "none");
+        $("#finishedScreen").css("display", "none");
+        $("#sendingScreen").css("display", "none");
+        $("#helpDialogForm").css("display", "block");
+        //Clear the values in the form
+        $("#firstHelp").val("");
+        $("#lastHelp").val("");
+        $("#contactHelp").val("");
+        $("#messageHelp").val("");
+        //Clear borders around the form
+        $("#firstHelp").css("border", "1.5px solid #fff");
+        $("#firstHelp").css("border-bottom", "1.5px solid #b4becb");
+        $("#lastHelp").css("border", "1.5px solid #fff");
+        $("#lastHelp").css("border-bottom", "1.5px solid #b4becb");
+        $("#contactHelp").css("border", "1.5px solid #fff");
+        $("#contactHelp").css("border-bottom", "1.5px solid #b4becb");
+        $("#messageHelp").css("border", "1.5px solid #b4becb");
+    });
+
+    //when user clicks on send message button, change to loading screen
+    function sendMessage() {
+
+        let questionObj = new Question(
+            $("#firstHelp").val(),
+            $("#lastHelp").val(),
+            $("#contactHelp").val(),
+            $("#messageHelp").val()
+        );
+
+        // check if all form sections are filled out
+        for(let property in questionObj) {
+            // if they aren't, raise error message
+            if(questionObj[property] === "") {
+                $("#" + property + "Help").css("border", "1.5px solid rgb(172, 0, 0)");
+                return undefined;
+            }
+            if(property != "message") {
+                $("#" + property + "Help").css("border", "1.5px solid #fff");
+                $("#" + property + "Help").css("border-bottom", "1.5px solid #b4becb");
+            } else {
+                $("#" + property + "Help").css("border", "1.5px solid #b4becb");
+            }
+            
+        }
+
+        //Move dialog content to loading screen
+        $("#errorMessageHelp").css("display", "none");
+        $("#helpDialogForm").css("display", "none");
+        $("#sendingScreen").css("display", "block");
+        //Put code here for emailing form inputs
+        sendMailHelp(questionObj);     
+    }
+
+    //When loading screen is done, change content to sent page
+    $("#progressBarHelp").on("animationend", function() {
+        $("#sendingScreen").css("display", "none");
+        $("#finishedScreen").css("display", "block");
+    })
+
+    function deleteRacket(ind) {
+        let racket = racketObjectList[ind-1];
+
+        // remove the racket from the racket list
+        racketObjectList.splice(ind-1, 1);
+
+        // update the order total
+        if(racket.provider === "Advantage Stringing") {
+            orderTotal -= 20;
+            $("#totalOrderPrice").html("Total: $" + orderTotal + ".00");
+        } else if(racket.provider === "Customer") {
+            orderTotal -= 10;
+            $("#totalOrderPrice").html("Total: $" + orderTotal + ".00");
+        } 
+        
+        
+
+        if(racketObjectList.length === 0) {
+            $("#noRacketFiller").css("display", "block");
+            $("#racketItem1").css("display", "none");
+        } else if(racketObjectList.length >= 1) {
+            $("#racketItem" + ind).remove();
+
+            for(let i=ind-1; i<racketObjectList.length; i++) {
+                racketObjectList[i].subNumber();
+                document.getElementById('racketItem' + (racketObjectList[i].number+1)).setAttribute('id', 'racketItem' + racketObjectList[i].number);
+                $("#racketItem" + racketObjectList[i].number + " .deleteBtn").attr("onclick", "deleteRacket(" + racketObjectList[i].number + ")");
+                $("#racketItem" + racketObjectList[i].number + " #racketLabel").html("Racket " + racketObjectList[i].number);
+            }
+        }
+    }
+
+
+</script>
+
+</html>
